@@ -157,6 +157,47 @@ namespace project1
               return a + " " + b;
         }
  */
+
+ // ------------------------------ working with string
+     /* string word = "Hello";
+      word += "!!!";
+      word  = String.Concat(word, "Bro!!!");
+
+      // Compare two strings; 0 === true, 1 === false
+      Console.WriteLine(String.Compare(word, "Hello!!!Bro!!!"));
+      Console.WriteLine(word);
+    //Console.WriteLine(word[4]);
+
+
+      string people = "Anton,Ivan,Anna";
+       // --------------------------------------- Split
+      string[] names = people.Split(new char[]{','});
+      foreach(string el in names) {
+        Console.WriteLine(el);
+      }
+      people = String.Join(' ', people);
+      Console.WriteLine(people);
+      */
+
+// ------------------------------ working with files
+
+    Console.WriteLine("Enter file name ...");
+    string fileName = Console.ReadLine() + ".txt";
+    Console.WriteLine("Enter text for file ...");
+    string text = Console.ReadLine();
+
+    using(FileStream stream = new FileStream($"{fileName}", FileMode.OpenOrCreate)) {
+        byte[] array = System.Text.Encoding.Default.GetBytes(text);
+        stream.Write(array, 0, array.Length);
+    } // Create file and writing text inside
+
+    using(FileStream stream1 = File.OpenRead(fileName)) {
+        byte[] array = new byte[stream1.Length];
+        stream1.Read(array, 0, array.Length);
+
+        string textFromFile = System.Text.Encoding.Default.GetString(array);
+        Console.WriteLine(textFromFile);
+    }
         }
     }
 
