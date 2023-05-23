@@ -136,7 +136,7 @@ namespace project1
     }
 */
 
-// --------------------------------- FUNCTIONS
+//                                   *** FUNCTIONS ***
 /*
             int[] numbers = new int[]{1,5,6,8,6,8};
             Print(numbers);
@@ -158,7 +158,7 @@ namespace project1
         }
  */
 
- // ------------------------------ working with string
+ //                                  *** working with string ***
      /* string word = "Hello";
       word += "!!!";
       word  = String.Concat(word, "Bro!!!");
@@ -179,26 +179,57 @@ namespace project1
       Console.WriteLine(people);
       */
 
-// ------------------------------ working with files
+//                                  *** working with files ***
 
-    Console.WriteLine("Enter file name ...");
-    string fileName = Console.ReadLine() + ".txt";
-    Console.WriteLine("Enter text for file ...");
-    string text = Console.ReadLine();
+    // Console.WriteLine("Enter file name ...");
+    // string fileName = Console.ReadLine() + ".txt";
+    // Console.WriteLine("Enter text for file ...");
+    // string text = Console.ReadLine();
 
-    using(FileStream stream = new FileStream($"{fileName}", FileMode.OpenOrCreate)) {
-        byte[] array = System.Text.Encoding.Default.GetBytes(text);
-        stream.Write(array, 0, array.Length);
-    } // Create file and writing text inside
+    // Create new text file
+    // using(FileStream stream = new FileStream($"{fileName}", FileMode.OpenOrCreate)) {
+    //     byte[] array = System.Text.Encoding.Default.GetBytes(text);
+    //     stream.Write(array, 0, array.Length);
+    // } // Create file and writing text inside
 
-    using(FileStream stream1 = File.OpenRead(fileName)) {
-        byte[] array = new byte[stream1.Length];
-        stream1.Read(array, 0, array.Length);
+    // Reading information from created files
+    // using(FileStream stream1 = File.OpenRead(fileName)) {
+    //     byte[] array = new byte[stream1.Length];
+    //     stream1.Read(array, 0, array.Length);
 
-        string textFromFile = System.Text.Encoding.Default.GetString(array);
-        Console.WriteLine(textFromFile);
-    }
+    //     string textFromFile = System.Text.Encoding.Default.GetString(array);
+    //     Console.WriteLine(textFromFile);
+    // }
+
+    //                     *** try / catch ***
+    // try
+    // {
+    //     int num = Convert.ToInt32(Console.ReadLine());
+    // Console.WriteLine(num);
+    // }
+    // catch (FormatException)
+    // {
+    //     Console.WriteLine("Error: Incorrect format");
+    // }
+    // catch (DivideByZeroException)
+    // {
+    //     Console.WriteLine("Error: You entered 0");
+    // }
+    // finally {
+    //     Console.WriteLine("Program is finished");
+    // }
+
+    //              *** Classes and Objects ***
+
+        Robot bot = new Robot();
+        // bot.name = "Vally";
+        // bot.weight = 500;
+        // bot.coodrinates = new byte[] {0,15,12};
+        // Console.WriteLine(bot.name);
+        bot.setValues("John", 650, new byte[] {12,15,5});
+        bot.printValues();
         }
+
     }
 
 }
