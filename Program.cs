@@ -221,13 +221,32 @@ namespace project1
 
     //              *** Classes and Objects ***
 
-        Robot bot = new Robot();
+        Robot bot = new Robot("John", 650, new byte[] {12,15,5});
         // bot.name = "Vally";
         // bot.weight = 500;
         // bot.coodrinates = new byte[] {0,15,12};
         // Console.WriteLine(bot.name);
-        bot.setValues("John", 650, new byte[] {12,15,5});
+        // bot.setValues("John", 650, new byte[] {12,15,5});
         bot.printValues();
+
+        Terminator terminator = new Terminator();
+        terminator.setValues("T-2000", 200, new byte[] {1,5,6});
+        terminator.printValues();
+
+        Robot.count = 56;
+        terminator.Weight = - 5;
+        Console.WriteLine(terminator.Weight);
+        terminator.Width = 1920;
+        Console.WriteLine(Robot.count);
+        Robot.Show();
+
+        Terminator t5000 = new Terminator();
+        t5000.Weight = 500;
+        t5000.Lazer();
+
+        Console.WriteLine(t5000);
+
+
         }
 
     }
