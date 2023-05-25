@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 
 namespace project1
 {
-    public class Robot
-    {
+    abstract class Robot : IRun, IJump  {
         // public /* доступно везеде */
         // protected /* доступен внутри класса и классах наследниках */
         // private /* досутпен только внутри этого класса */
@@ -14,7 +13,7 @@ namespace project1
         public static int count; // can use it directly (without creating new object Robot) Robot.count = 12 / don't use this
 
         // -------------------- ACCESSORS (get / set)
-/*
+
         public int Weight {
             get {
                 Console.Write("Value: ");
@@ -30,7 +29,7 @@ namespace project1
 
         public int Width {private get; set; }
 
-*/
+
         public static void Show() {
             Console.WriteLine("Show method is invoking");
         }
@@ -41,6 +40,7 @@ namespace project1
         private string name;
         private int weight;
         private byte[] coodrinates;
+        protected string surname;
         public Robot(string name, int weight, byte[] coordinates) {
             this.name = name;
             this.weight = weight;
@@ -50,6 +50,20 @@ namespace project1
 
         public Robot() { }
 
+        public string Name { get {
+            return name;
+        } set {
+
+        }}
+        public byte[] Coodrinates { get {
+            return coodrinates;
+        } set {
+
+        }}
+
+        public float speed { get; set; }
+        public float y { get; set; }
+
         public void setValues(string name, int weight, byte[] coordinates)
         {
             this.name = name;
@@ -57,16 +71,21 @@ namespace project1
             this.coodrinates = coordinates;
         }
 
-        public void printValues()
+        public void setValues(string name, int weight)
         {
-            Console.WriteLine("name: " + name + " weight: " + weight, "coordinate: ");
-            foreach (int item in coodrinates)
-            {
-                Console.WriteLine(item);
-            }
+            this.name = name;
+            this.weight = weight;
         }
 
+        public abstract void printValues();
 
+        public void RobotRun() {
+            Console.WriteLine("Robot is now running");
+        }
 
+        public void Jump()
+        {
+            Console.WriteLine("Robot is now jumping");;
+        }
     }
 }
