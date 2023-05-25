@@ -221,33 +221,77 @@ namespace project1
 
     //              *** Classes and Objects ***
 
-        Robot bot = new Robot("John", 650, new byte[] {12,15,5});
+        // Robot bot = new Robot("John", 650, new byte[] {12,15,5});
         // bot.name = "Vally";
         // bot.weight = 500;
         // bot.coodrinates = new byte[] {0,15,12};
         // Console.WriteLine(bot.name);
         // bot.setValues("John", 650, new byte[] {12,15,5});
-        bot.printValues();
+        // bot.printValues();
 
-        Terminator terminator = new Terminator();
-        terminator.setValues("T-2000", 200, new byte[] {1,5,6});
-        terminator.printValues();
+        // Terminator terminator = new Terminator();
+        // terminator.setValues("T-2000", 200, new byte[] {1,5,6});
+        // terminator.printValues();
 
-        Robot.count = 56;
-        terminator.Weight = - 5;
-        Console.WriteLine(terminator.Weight);
-        terminator.Width = 1920;
-        Console.WriteLine(Robot.count);
-        Robot.Show();
+        // Robot.count = 56;
+        // terminator.Weight = - 5;
+        // Console.WriteLine(terminator.Weight);
+        // terminator.Width = 1920;
+        // Console.WriteLine(Robot.count);
+        // Robot.Show();
 
-        Terminator t5000 = new Terminator();
-        t5000.Weight = 500;
-        t5000.Lazer();
+        Terminator t5000 = new Terminator("Alex", 650, new byte[] {12,15,5}, 100, Type.Enemy);
+        // t5000.Weight = 500;
+        // t5000.Lazer();
+        // t5000.Health = 100;
+        t5000.printValues();
+        Console.WriteLine(t5000.Health);
 
-        Console.WriteLine(t5000);
+        Bot bot = new Bot();
+        bot.Weight = -50;
 
 
+        // ------------------ Operators is / as
+
+        List<Terminator> robots = new List<Terminator>();
+        robots.Add(new Terminator("Alex", 540, new byte[]{0,15,65}, 100, Type.Hero));
+        robots.Add(new Terminator("Ivan", 440, new byte[]{0,16,66}, 100, Type.Hero));
+        robots.Add(new Terminator("Anna", 250, new byte[]{0,17,67}, 100, Type.Hero));
+        robots.Add(new Terminator("Dima", 910, new byte[]{0,18,68}, 100, Type.Hero));
+
+        Robot newRobot = null;
+        foreach(Terminator el in robots) {
+            if(el.Name == "Alex") {
+                newRobot = el as Robot; // приведение к определенному классу
+            }
+            Console.WriteLine(el is Robot); // checking what kind of type
         }
+
+
+            // ------------------------ Struct
+
+            Book war = new Book();
+            war.author = "Tolstoy";
+            war.title = "The war and the world";
+            war.printValues();
+        }
+
+        // Multiply(5, 10, 3);
+        // Multiply(1.5f, 5.5f);
+        // }
+        // public static void Multiply(int a, int b) {
+        //     int result = a * b;
+        //     Console.WriteLine(result);
+        // }
+
+        // public static void Multiply(float a, float b) {
+        //     float result = a * b;
+        //     Console.WriteLine(result);
+        // }
+        // public static void Multiply(int a, int b, int c) {
+        //     int result = a * b * c;
+        //     Console.WriteLine(result);
+        // }
 
     }
 
