@@ -293,6 +293,29 @@ namespace project1
         //     Console.WriteLine(result);
         // }
 
+        // ******************* LINQ
+//  var students = new List<Student>
+//         {
+//             new Student {LastName = "Ivan", Group = "FT-1"},
+//             new Student {LastName = "Anna", Group = "FT-1"},
+//             new Student {LastName = "Sasha", Group = "FT-1"},
+//         };
+//         Console.WriteLine(students[0].LastName);
+
+//         var list = new List<int>{1,5,7,78,3,4};
+//         IEnumerable<int> newList = list.OrderDescending();
+//         foreach(int el in newList) {
+//             Console.WriteLine(el);
+//         }
+//         Console.WriteLine(list == newList);
+//     }
+
+//     public class Student
+//     {
+//         public string? LastName {get; set;}
+//         public string? Group {get; set;}
+//     }
+
     }
 
 }
